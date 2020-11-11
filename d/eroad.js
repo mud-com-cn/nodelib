@@ -1,4 +1,4 @@
-class ROOM extends require(global.config.MUDLIB+"/inherit/room.js").Room {
+class Room extends require(global.config.MUDLIB+"/inherit/environment.js").Environment {
 	constructor() {
 		super();
 		this.set("name","东大街");
@@ -7,4 +7,4 @@ class ROOM extends require(global.config.MUDLIB+"/inherit/room.js").Room {
 		this.set("exits",exits);
 	}
 }
-exports.ROOM = ROOM;
+exports.Room = Room;
