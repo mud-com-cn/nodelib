@@ -1,4 +1,5 @@
       欢迎来到NODELIB
+https://github.com/mud-com-cn/nodelib
 v0.1 - 2020/11/10
 这是一个用nodejs写的测试mudlib
 目前支持了登录，房间，指令
