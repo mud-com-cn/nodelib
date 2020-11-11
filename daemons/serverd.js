@@ -8,15 +8,11 @@ SERVER_D.init = function() {
 			var user = new User(socket);
 			SERVER_D.welcome(user);
 			user.set_temp("is_loging",1);
+			user.set_temp("login_step","getid");
 			user.message("请输入您的ID(没做判断啊别瞎搞，老老实实输入英文3-8个字母的id):");
 	})
 	SERVER_D.onClose = function (user,p1) {
 		user.quit();
-	}
-	SERVER_D.onCommand = function (user,chunk) {
-		//user.message(ansi.HIG+chunk+ansi.NOR);
-		//user.message(global.app.ANSI.HIG+chunk+global.app.ANSI.NOR);
-		global.app.COMMAND_D.doCommand(user,chunk);
 	}
 	SERVER_D.onError = function (user,p1) {
 	}

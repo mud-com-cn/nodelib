@@ -11,7 +11,6 @@ ps. 支持指令包括：
 go 走路指令 最完备COMMAND_D还支持了globalalias
 hp 就是显示一下dbase
 look  现在只能看房间
-name  改自己名字方便测试
 rehash  动态加指令
 say 房间说话(globalalias '可用)
 shout 喊 但是是骗人的 还没写全局的用户管理
