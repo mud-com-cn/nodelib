@@ -13,7 +13,7 @@ hp 就是显示一下dbase
 look  现在只能看房间
 rehash  动态加指令
 say 房间说话(globalalias '可用)
-shout 喊 但是是骗人的 还没写全局的用户管理
+/*shout 喊 但是是骗人的 还没写全局的用户管理*/
 
 v0.3 - 2020/11/11
 支持登录
@@ -24,4 +24,4 @@ v0.4 - 2020/11/11
 另外还是没有管理users
 增加了一个client.js用于测试连接，相当于一个小telnet
 增加了look 玩家的功能（本质上是实现lpc里id()这个apply，然而还没尝试处理id xxx数字编号的问题）
-
+增加了users的管理（logind里），shout喊话终于不骗人了
