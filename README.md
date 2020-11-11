@@ -8,7 +8,8 @@ SCREENSHOT
 1. 在adm/config.js当中修改配置，只有两个MUDLIB(项目的绝对路径)和PORT（服务端口）
 2. 在目录下用node main.js启动
 3. node version >= v12.18.4
-4. 以下是tree：
+4. tree改了好多。。。有空再重写以下把
+5. 以下是tree：
 
 ├── adm                  //存放全局管理的控件，都是Object
 
