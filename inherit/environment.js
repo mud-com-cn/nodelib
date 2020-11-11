@@ -4,6 +4,13 @@ class Environment extends require(global.config.MUDLIB+'/inherit/dbase.js').Dbas
 	constructor() {
 		super();
 	}
+	find_in_inv(id) {
+		for(var i = this.inv.length-1;i>=0;i++) {
+			if(id == this.inv[i].get("id"))
+				return this.inv[i];
+		}
+		return undefined;
+	}
 	onMove(obj) {
 		this.inv.push(obj);
 	}

@@ -26,6 +26,11 @@ class User extends require(global.config.MUDLIB+"/inherit/save.js").Save {
 			return "Wrong ID";
 		}
 	}
+	desc() {
+		var str = this.shortname();
+		str += "\n"+"这里是这个人物的长描述巴拉巴拉。\n";
+		return str;
+	}
 	message(msg) {
 		this.socket.write(msg);
 	}
