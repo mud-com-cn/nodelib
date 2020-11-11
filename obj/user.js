@@ -41,6 +41,7 @@ class User extends require(global.config.MUDLIB+"/inherit/save.js").Save {
 		this.set("max_mp",100);
 	}
 	quit() {
+		global.app.LOGIN_D.removeUsers(this);
 		this.stop_heart_beat();
 		this.leave();
 		this.save();

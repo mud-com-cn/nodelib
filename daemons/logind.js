@@ -1,5 +1,19 @@
 var LOGIN_D = new Object();
-
+LOGIN_D.users = [];
+LOGIN_D.addUsers = function(user) {
+	if(LOGIN_D.users.indexOf(user)>=0) {
+		// already in users
+	} else {
+		LOGIN_D.users.push(user);
+	}
+}
+LOGIN_D.removeUsers = function(user) {
+	if(LOGIN_D.users.indexOf(user)>=0) {
+                // already in users
+		LOGIN_D.users.slice(LOGIN_D.users.indexOf(user),1);
+        } else {
+        }
+}
 LOGIN_D.doLoginCmd = function(user,cmd) {
 	switch(user.get_temp("login_step")) {
 	case "getid" :
@@ -24,6 +38,7 @@ LOGIN_D.doLoginCmd = function(user,cmd) {
 	}
 }
 LOGIN_D.enterWorld = function(user) { 
+	LOGIN_D.addUsers(user);
         user.set_temp("is_loging",0);
 	user.set_temp("login_step",0);
         user.move(global.app.ROOM_D.getRoom("/d/center"));
