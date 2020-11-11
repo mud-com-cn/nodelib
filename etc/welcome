@@ -1,0 +1,22 @@
+      欢迎来到NODELIB
+v0.1 - 2020/11/10
+这是一个用nodejs写的测试mudlib
+目前支持了登录，房间，指令
+可以look(l)房间，可以go east,east,e这样走路
+整个架构尽量模仿了es2 lib
+包括这个WELCOME。。。
+
+v0.2 - 2020/11/10
+ps. 支持指令包括：
+go 走路指令 最完备COMMAND_D还支持了globalalias
+hp 就是显示一下dbase
+look  现在只能看房间
+name  改自己名字方便测试
+rehash  动态加指令
+say 房间说话(globalalias '可用)
+shout 喊 但是是骗人的 还没写全局的用户管理
+
+v0.3 - 2020/11/11
+支持登录
+支持save quit（读写存档文件）
+
