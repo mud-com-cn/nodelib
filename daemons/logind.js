@@ -14,6 +14,26 @@ LOGIN_D.removeUsers = function(user) {
         } else {
         }
 }
+
+LOGIN_D.checkLegalId = function(id) {
+	if(id.length<3 || id.length>8) 
+		return 0;
+	var pattern = new RegExp("[a-z]+");
+	if(pattern.test(id)) 
+		return 1;
+	return 0;
+	
+}
+LOGIN_D.checkLegalName = function(name) {
+	if(name.length<4 || name.length>10)
+                return 0;
+	var pattern = new RegExp("[\u4E00-\u9FA5]+");
+	if(pattern.test(name))
+                return 1;
+        return 0;
+
+
+}
 LOGIN_D.doLoginCmd = function(user,cmd) {
 	switch(user.get_temp("login_step")) {
 	case "getid" :
@@ -23,12 +43,20 @@ LOGIN_D.doLoginCmd = function(user,cmd) {
                 	user.message("读取用户数据成功。\n");
 			LOGIN_D.enterWorld(user);
         	} else {
-			user.set_temp("login_step","getname");
-			user.message("创建新角色。\n请输入中文名字：");
+			if(LOGIN_D.checkLegalId(cmd)) {
+				user.set_temp("login_step","getname");
+				user.message("创建新角色。\n请输入中文名字：");
+			} else {
+				user.message("请输入合法ID（3-8小写英文字母组成）：");
+			}
 		}
 		break;
 	case "getname" :
 		user.set("name",cmd);
+		if(!LOGIN_D.checkLegalName(cmd))  {
+			user.message("请输入合法中文名（2-5汉字，不包含特殊字符/字母/数字）：");	
+			break;
+		}
 		user.setup();
 		user.save();
 		user.start_heart_beat();

@@ -28,7 +28,6 @@ class Save extends require(global.config.MUDLIB+'/inherit/environment.js').Envir
 		return 1;
 	}
 	asure_file(file) {
-        	var dirs = file.split("/");
 	        var dirs = file.split("/");
 	        var dirname = "/";
         	var fs = require('fs');
