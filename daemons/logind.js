@@ -25,7 +25,7 @@ LOGIN_D.checkLegalId = function(id) {
 	
 }
 LOGIN_D.checkLegalName = function(name) {
-	if(name.length<4 || name.length>10)
+	if(name.length<2 || name.length>5)
                 return 0;
 	var pattern = new RegExp("[\u4E00-\u9FA5]+");
 	if(pattern.test(name))
